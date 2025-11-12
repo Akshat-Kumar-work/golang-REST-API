@@ -35,7 +35,7 @@ yourproject/
 └── README.md
 ```
 
-# To initialize gloang project
+# To initialize go project
 ```
 go mod init
 ```

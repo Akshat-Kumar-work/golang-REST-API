@@ -1,0 +1,47 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Build artifacts
+bin/
+build/
+dist/
+
+# Go coverage and profiling files
+*.prof
+*.out
+coverage.*
+
+# Dependency directories (older Go versions / vendored deps)
+vendor/
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+
+# IDE/editor files
+.vscode/
+.idea/
+*.iml
+
+# OS-specific
+Thumbs.db
+.DS_Store
+
+# Configuration / secrets
+.env
+.env.*
+config.yaml
+config.local.yaml
+
+# If you use go modules, these stay tracked (don’t ignore!)
+#! go.mod
+#! go.sum
