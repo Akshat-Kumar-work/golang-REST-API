@@ -45,3 +45,5 @@ config.local.yaml
 # If you use go modules, these stay tracked (don’t ignore!)
 #! go.mod
 #! go.sum
+
+storage
