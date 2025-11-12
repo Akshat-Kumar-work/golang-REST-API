@@ -1,3 +1,5 @@
+# Structure 
+```
 yourproject/
 ├── cmd/
 │   ├── yourapp/
@@ -31,6 +33,7 @@ yourproject/
 ├── go.mod
 ├── go.sum
 └── README.md
+```
 
 # To initialize gloang project
 ```
