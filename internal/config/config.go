@@ -23,7 +23,7 @@ type Config struct {
 	HTTPServer  `mapstructure:"http_server"`
 }
 
-func LoadConfig() (*Config, error) {
+func LoadConfig() *Config {
 
 	// it first loaded .env file and check for variables from that if not found fall-back to config file
 	if err := godotenv.Load(".env"); err != nil {
@@ -52,5 +52,5 @@ func LoadConfig() (*Config, error) {
 		log.Fatal(err)
 	}
 
-	return &cfg, nil
+	return &cfg
 }

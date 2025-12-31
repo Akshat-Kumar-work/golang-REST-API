@@ -24,6 +24,11 @@ variable priority: .env=>yaml=>go struct(zero value if missing)
 
 ```
 
+# For structured logging use zap
+```
+go get go.uber.org/zap
+```
+
 # Structure 
 ```
 yourproject/
