@@ -5,6 +5,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/Akshat-Kumar-work/golang-rest-api/pkg/logger"
 	"github.com/joho/godotenv"
 	"github.com/spf13/viper"
 )
@@ -18,9 +19,10 @@ type HTTPServer struct {
 }
 
 type Config struct {
-	Env         string `mapstructure:"env"`
-	StoragePath string `mapstructure:"storage_path"`
-	HTTPServer  `mapstructure:"http_server"`
+	Env              string `mapstructure:"env"`
+	StoragePath      string `mapstructure:"storage_path"`
+	HTTPServer       `mapstructure:"http_server"`
+	logger.LogConfig `mapstructure:"LogConfig"`
 }
 
 func LoadConfig() *Config {
