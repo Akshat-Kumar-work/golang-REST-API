@@ -39,12 +39,10 @@ Thumbs.db
 # Configuration / secrets
 .env
 .env.*
-config.yaml
-config.local.yaml
+
 
 # If you use go modules, these stay tracked (don’t ignore!)
 #! go.mod
 #! go.sum
 
 storage
-config

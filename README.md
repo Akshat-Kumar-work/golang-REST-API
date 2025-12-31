@@ -1,3 +1,29 @@
+
+# To initialize go project
+```
+go mod init project-name
+```
+
+# In go community the project-name convention is
+```
+github.com/github-user-name/repository-name
+```
+
+# For config management use and mapping
+```
+viper library
+install: go get github.com/spf13/viper
+```
+
+# For maintaining ,loading env from .env
+```
+Joho/Godotenv
+install: go get github.com/joho/godotenv
+
+variable priority: .env=>yaml=>go struct(zero value if missing)
+
+```
+
 # Structure 
 ```
 yourproject/
@@ -33,9 +59,4 @@ yourproject/
 ├── go.mod
 ├── go.sum
 └── README.md
-```
-
-# To initialize go project
-```
-go mod init
 ```
