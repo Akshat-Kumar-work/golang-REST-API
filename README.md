@@ -28,6 +28,20 @@ variable priority: .env=>yaml=>go struct(zero value if missing)
 ```
 go get go.uber.org/zap
 ```
+# If log log format !=json
+```
+2026-01-01T00:04:28.162+0530    INFO    logger/logger.go:82     Starting server {"service": "students-api", "env": "local", "storage_path": "storage/storage.db", "address": "localhost:8082"}
+```
+# If log format == json
+```
+{"level":"info","ts":1767206134.6356711,"caller":"logger/logger.go:82","msg":"Starting server","service":"students-api","env":"staging","storage_path":"staging/storage/storage.db","address":"staging/localhost:8082"}
+```
+
+# If using custom errors
+```
+Use fmt.Errorf() for operational errors like creation etc to buit a stack
+For known err like validations or not found return the err directly coming from repo to server to handler 
+```
 
 # Structure 
 ```

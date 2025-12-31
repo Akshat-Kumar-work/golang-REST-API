@@ -51,7 +51,10 @@ func Initialize(config LogConfig) error {
 	}
 
 	// 5️⃣ Build the logger
-	logger, err := zapConfig.Build()
+	logger, err := zapConfig.Build(
+		zap.AddCaller(),      //enable caller info
+		zap.AddCallerSkip(1), //skip logger package(will not show logger file as log caller)
+	)
 	if err != nil {
 		return err
 	}

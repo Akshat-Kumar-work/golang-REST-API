@@ -22,7 +22,7 @@ type Config struct {
 	Env              string `mapstructure:"env"`
 	StoragePath      string `mapstructure:"storage_path"`
 	HTTPServer       `mapstructure:"http_server"`
-	logger.LogConfig `mapstructure:"LogConfig"`
+	logger.LogConfig `mapstructure:"log_config"`
 }
 
 func LoadConfig() *Config {
