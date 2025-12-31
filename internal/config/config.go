@@ -2,6 +2,7 @@ package config
 
 import (
 	"log"
+	"os"
 	"strings"
 
 	"github.com/joho/godotenv"
@@ -22,18 +23,21 @@ type Config struct {
 	HTTPServer  `mapstructure:"http_server"`
 }
 
-func LoadConfig(env string) (*Config, error) {
+func LoadConfig() (*Config, error) {
 
 	// it first loaded .env file and check for variables from that if not found fall-back to config file
 	if err := godotenv.Load(".env"); err != nil {
 		log.Println(".env file not found, using OS environment variables only")
 	}
+
+	//get env value from .env if available if not available use local
+	env := os.Getenv("ENV")
 	if env == "" {
 		viper.SetConfigName("local") //config file name without extension
 	}
 	viper.SetConfigName(env)
 	viper.SetConfigType("yaml")
-	viper.AddConfigPath("./config")
+	viper.AddConfigPath("./configs")
 
 	viper.AutomaticEnv()                                   //it automatically loads env var, whenever we say viper.GetString("app.Env") looks in env var if not found look into config file
 	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_")) //for config file we can use app.HTTPServer.Address but not in env var, so it replace . with _

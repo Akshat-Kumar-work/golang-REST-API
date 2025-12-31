@@ -9,12 +9,11 @@ import (
 
 func main() {
 
-	cfg, err := config.LoadConfig("local")
+	cfg, err := config.LoadConfig()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println("students api")
 	fmt.Println("Env", cfg.Env)
 	fmt.Println("storage_path", cfg.StoragePath)
 	fmt.Println("server_address ", cfg.HTTPServer.Address)

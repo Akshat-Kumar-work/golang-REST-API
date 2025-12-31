@@ -1,0 +1,4 @@
+env: "staging"
+storage_path: "staging/storage/storage.db"
+http_server:
+  address: "staging/localhost:8082"
